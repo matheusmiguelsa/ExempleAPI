@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Exemple{% endblock %}
+
+{% block content %}
+<div class="col-14 m-auto pt-4 pb-2">
+    <form name="form" id="form" method="post">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    <div class="form-group mt-4">Payment id: {{form.payment_id}}</div>
+    <div class="form-group mt-4">Start date: {{form.start_date}}</div>
+    <div class="form-group mt-4">End date: {{form.end_date}}</div>
+    <div class="form-group mt-4">Original value id: {{form.original_value}}</div>
+    <div class="form-group mt-4">Collaborator owner: {{form.collaborator_owner}}</div>
+    <div class="form-group mt-4">Social bussiness name: {{form.social_bussiness_name}}</div>
+    <div class="form-group mt-4">CNPJ: {{form.CNPJ}}</div>
+    
+    <input class="btn btn-primary" type="submit" value="Submit"></input>
+    {% endif %}
+    </form> 
+</div>
+
+{% endblock %}
