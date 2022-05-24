@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Exemple{% endblock %}
+
+{% block content %}
+<div class="col-14 m-auto pt-4 pb-2">
+    <div id="result"></div>
+    <form name="form" id="form" method="post">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    <h2>Preencha o formulário com as informações do pagamento, para nossos colaboradores calcularem os juros caso necessário.</h2>
+    <hr size="8" color="gray">
+    <div class="form-group mt-4">Id do pagamento: <br> {{form.payment_id}}</div>
+    <div class="form-group mt-4">Data de início do serviço (dd/mm/aaaa): <br> {{form.start_date}}</div>
+    <div class="form-group mt-4">Data de término do serviço (dd/mm/aaaa): <br> {{form.end_date}}</div>
+    <div class="form-group mt-4">Valor inicial cobrado pelo serviço: <br> {{form.original_value}}</div>
+    <div class="form-group mt-4">Colaborador responsável: <br> {{form.collaborator_owner}}</div>
+    <div class="form-group mt-4">Rasão social: <br> {{form.social_bussiness_name}}</div>
+    <div class="form-group mt-4">CNPJ: <br> {{form.CNPJ}}</div>    
+    <input class="btn btn-primary" type="submit" value="Enviar"></input>
+    {% else %}
+    <h1 >Olá cliente!</h1>
+    <p id="line" style = "font-size: 25px">
+    <br>
+    Este site é destinado para a solicitação da extensão do prazo de entrega.
+    <br>
+    <br>
+    Por gentileza, registre-se para ter acesso ao formulário de solicitação.
+    <br>
+    <br>
+    Suas informações serão disponibilizadas em uma API pública, que pode ser acessada <a href="https://api-client-sa.herokuapp.com/api/clients/">clicando aqui</a>
+    <br>
+    <br>
+    
+    </p>
+    {% endif %}
+    </form> 
+</div>
+
+
+{% endblock %}
