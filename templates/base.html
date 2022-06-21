@@ -9,6 +9,10 @@
         #line{
             align-content: center;
         }
+        #end {
+            position: relative;
+            height: 0%;
+        }
     </style>
 
 </head>
@@ -39,6 +43,28 @@
         {% block content %}
         {% endblock %}
     </main>
+    <footer class="fixed-bottom">
+        <nav class="navbar navbar-expand navbar-dark bg-dark mb-3 p-2
+        ">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'pages:home' %}">Sá Orçamentos</a>
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Cadastre-se</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </footer>
     {% load static %}
     <script src="{% static 'javascript.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
