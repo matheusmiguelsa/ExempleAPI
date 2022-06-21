@@ -20,7 +20,9 @@ To GET this API as json format you need to use the endpoint: http://localhost:80
 
 How to run this
 
-$ git clone (URL of this project)
+Type the code below in your terminal
+
+git clone https://github.com/matheusmiguelsa/ExempleAPI.git
 
 After clone this repository, you might install the virtual machine(venv) and the libs before run this:
 
