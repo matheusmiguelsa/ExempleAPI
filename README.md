@@ -25,24 +25,22 @@ $ git clone (URL of this project)
 After clone this repository, you might install the virtual machine(venv) and the libs before run this:
 
 In Linux:
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install -r requirements.txt
-$ python manage.py migrate
-$ python manage.py makemigrations
-And to run:
-$ python manage.py runserver
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py makemigrations
+python manage.py runserver
 
 So, access in your favorite browser: https://localhost:8000
 
 In Windows:
-> python -m venv venv
-> cd venv/Scripts && activate
-> cd .. && cd ..
-> pip install -r requirements.txt
-> python manage.py migrate
-> python manage.py makemigrations
-And to run:
-> python manage.py runserver
+python -m venv venv
+cd venv/Scripts && activate
+cd .. && cd ..
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py makemigrations
+python manage.py runserver
 
 So, access in your favorite browser: https://localhost:8000
