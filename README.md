@@ -3,6 +3,7 @@ Clients API
 - Clients API is a way to request a new budget of your project in Example
 - All the data will be posted as a public API in https://api-client-sa.herokuapp.com/api/clients/
 
+
 How to use it (Online Example)
 
 - To GET this as API you need to use the endpoint: https://api-client-sa.herokuapp.com/api/clients/?format=api 
@@ -17,6 +18,7 @@ To GET this API as json format you need to use the endpoint: http://localhost:80
 - To POST in this API you might login and fill the form in http://localhost:8000/
 - It is impossible to DELETE what was posted.
 - You can also PATCH in what was posted by filling in the form in the endpoint http://localhost:8000/api/clients/
+- To run this code in your machine you might use Python 3.8+, and Django 4.0+ (if you change the defaut version of this repository)
 
 How to run this
 
